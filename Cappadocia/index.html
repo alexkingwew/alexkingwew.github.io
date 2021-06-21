@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cappadocia</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      background: #fff;
+      z-index: 1001;
+    }
+
+    .preloader__image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: url('preloader/preloader-3.gif')  no-repeat 50% 50%;
+      /*расположение (url) изображения gif и др. параметры*/
+    }
+
+    .loaded_hiding .preloader {
+      transition: .3s opacity;
+      opacity: 0;
+    }
+
+    .loaded .preloader {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Прелоадер -->
+  <div class="preloader">
+    <div class="preloader__image"></div>
+  </div>
+
+  
+  <script>
+    window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 500);
+    }
+  </script>
+
+
+  <header class="header">
+    <div class="container">
+      <div class="header__top">
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a href="#down_route" class="menu__list-link">Маршрут</a>
+            </li>
+            <li class="menu__list-item">
+              <a href="#down_hotel" class="menu__list-link">Отель</a>
+            </li>
+            <li class="menu__list-item">
+              <a href="#down_price" class="menu__list-link">Стоимость</a>
+            </li>
+            <li class="menu__list-item">
+              <a href="#down_contacts" class="menu__list-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="header__phone" href="tel:+380665557776">+38(066)555-777-6</a>
+      </div>
+      <h1 class="header__title">
+        Cappadocia
+        <span>Эксклюзивный тур</span>
+      </h1>
+    </div>
+  </header>
+
+  <section class="fairy-tail page-section">
+    <div class="container">
+      <h3 class="fairy-tail__title  title">
+        fairy tail
+        <span>Сказочная страна чудес</span>
+      </h3>
+    </div>
+    <div class="fairy-tail__inner">
+      <div class="fairy-tail__slider">
+        <div class="fairy-tail__item"><img src="images/fairy-tail-1.jpg" alt=""></div>
+        <div class="fairy-tail__item"><img src="images/fairy-tail-2.jpg" alt=""></div>
+        <div class="fairy-tail__item"><img src="images/fairy-tail-3.jpg" alt=""></div>
+      </div>
+      <div class="fairy-tail__content">
+        <div class="fairy-tail__container">
+          <div class="fairy-tail__body">
+            <p class="fairy-tail__text">
+              Каппадокия - сказочная страна воздушных шаров, сырных домиков, разноцветных долин и волшебных рассветов!
+              Сюда приезжают, чтобы увидеть природные чудеса, полетать на воздушном шаре и конечно же сделать миллион
+              красивых фотографий!
+            </p>
+            <p class="fairy-tail__text">
+              Участников тура ждёт профессиональная фотосессия от лучших фотографов Каппадокии!
+              Ведь именно за волшебными фото на рассвете на фоне воздушных шаров сюда приезжают люди со всего мира!
+            </p>
+            <div class="fairy-tail__body-title">Также Вы увидите:</div>
+            <ul class="fairy-tail__list">
+              <li> Музей на открытом воздухе в Гёреме</li>
+              <li>Ущелье Ыхлара и монастырь Селиме</li>
+              <li>Подземные города</li>
+              <li>Крепость Учхисар</li>
+              <li>Зельве и Пашабаг</li>
+            </ul>
+            <p class="fairy-tail__text">и многие другие достпримечательности.
+            </p>
+            <p class="fairy-tail__text">Местная кухня — один из поводов посетить Каппадокию, здесь есть рестораны на
+              любой бюджет.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-trip page-section">
+    <div class="our-trip__inner">
+      <div class="our-trip__content">
+        <div class="our-trip__container">
+          <div class="our-trip__body">
+            <div id="down_route"></div>
+            <h3 class="our-trip__title title">
+              Our trip <span>Маршрут</span>
+            </h3>
+            <ul class="our-trip__list">
+              <li>День 1 </li>
+              <li>Прилёт в Анкару</li>
+              <li>Трансфер в Каппадокию</li>
+              <li>Солёное озеро</li>
+              <li>Приезд в Гёреме </li>
+              <li>Ужин</li>
+            </ul>
+            <ul class="our-trip__list">
+              <li>День 2 </li>
+              <li>Фотосессия</li>
+              <li>Завтрак в отеле </li>
+              <li>Дневной тур по Каппадокии </li>
+              <li>Закат с панорамным видом </li>
+            </ul>
+            <ul class="our-trip__list">
+              <li>День 3 </li>
+              <li>Полёт на воздушном шаре</li>
+              <li>Завтрак в отеле </li>
+              <li>Экскурсии на выбор</li>
+            </ul>
+            <ul class="our-trip__list">
+              <li>День 4 </li>
+              <li>Свободное время, шоппинг</li>
+              <li>Трансфер в Анкару</li>
+              <li>Вылет в Киев</li>
+            </ul>
+            <a class="our-trip__btn" href="#">ЗАБРОНИРОВАТЬ</a>
+          </div>
+        </div>
+      </div>
+      <div class="our-trip__slider">
+        <div class="our-trip__slider-item">
+          <img src="images/our-trip1.jpg" alt="">
+        </div>
+        <div class="our-trip__slider-item">
+          <img src="images/our-trip2.jpg" alt="">
+        </div>
+        <div class="our-trip__slider-item">
+          <img src="images/our-trip3.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hotel page-section">
+    <div class="container">
+      <div id="down_hotel"></div>
+      <h3 class="hotel__title title">
+        Hotel
+        <span>Sultan Cave Suites</span>
+      </h3>
+      <div class="hotel__inner">
+        <img src="images/hotel.jpg" alt="" class="hotel__images">
+        <div class="hotel__content">
+          <p class="hotel__text">
+            В этом уникальном отеле, расположенном на вершине холма Айдынлы, вы можете забронировать высеченные в скале
+            номера, обставленные антикварной мебелью со всей Турции. С солнечной террасы отеля открывается прекрасный
+            панорамный вид на Национальный парк Гереме.
+
+          </p>
+          <p class="hotel__text">
+            Большинство номеров отеля Sultan Cave Suites высечены в скале, что обеспечивает прохладу и покой. Все номера
+            оборудованы гостиной зоной и современной ванной комнатой. В большинстве из них есть собственная терраса или
+            балкон.
+          </p>
+          <p class="hotel__text">
+            Отель Cave Suites Sultan располагает изысканным рестораном, где подают фирменные блюда региона Каппадокии.
+            После ужина, пройдя на террасу, вы сможете заказать напиток и полюбоваться закатом солнца над деревней.
+          </p>
+          <div class="hotel__gallery">
+            <a  data-fancybox="images" data-width="2048" data-height="1365" href="images/hotel-gallery-1.jpg"><img
+                src="images/hotel-gallery-1.jpg" alt=""></a>
+            <a data-fancybox="images" data-width="2048" data-height="1365" href="images/hotel-gallery-2.jpg"><img
+                src="images/hotel-gallery-2.jpg" alt=""></a>
+            <a data-fancybox="images" data-width="2048" data-height="1365" href="images/hotel-gallery-3.jpg"><img
+                src="images/hotel-gallery-3.jpg" alt=""></a>
+            <a data-fancybox="images" data-width="2048" data-height="1365" href="images/hotel-gallery-4.jpg"><img
+                src="images/hotel-gallery-4.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price page-section">
+    <div class="container">
+      <div id="down_price"></div>
+      <h3 class="price__title title">Price
+        <span>Стоимость услуг</span>
+      </h3>
+      <div class="price__inner">
+        <div class="price__on">
+          <div class="price__on__title">
+            Включено
+          </div>
+          <ul class="price__list">
+            <li class="price__list-item">Проживание в двухместном номере в отеле с завтраками
+            </li>
+            <li class="price__list-item">Индивидуальный трансфер для нашей группы из Анкары и обратно
+            </li>
+            <li class="price__list-item">Экскурсия на Солёное озеро
+            </li>
+            <li class="price__list-item">Индивидуальная дневная экскурсия по лучшим местам Каппадокии с личным
+              транспортом
+            </li>
+            <li class="price__list-item">Фотосессия с профессиональным фотографом для каждой участницы
+              (Несколько локаций, 5 лучших фото в обработке фотографа и весь материал (до 100 фотографий)
+            </li>
+          </ul>
+        </div>
+        <div class="price__off">
+          <div class="price__off__title">
+            Не включено
+          </div>
+          <ul class="price__list">
+            <li class="price__list-item">Авиа Киев-Анкара-Киев (140-170$)</li>
+            <li class="price__list-item">Обеды и ужины (150$ на поездку)
+
+            </li>
+            <li class="price__list-item">Воздушный шар 200$</li>
+            <li class="price__list-item">Дополнительные экскурсии (по желанию) от 30$
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="contacts page-section">
+    <div class="container">
+      <div class="contacts__inner">
+        <div class="contacts__content">
+          <div class="contacts__info">
+            <div class="contacts__date">
+              1.07.2020
+              <span>Ближайшая дата тура </span>
+            </div>
+            <div class="contacts__price">
+              490$
+              <span>Стоимость</span>
+            </div>
+
+          </div>
+          <form class="contacts__form">
+            <h4 class="contacts__form-title">Оставить заявку или задать вопрос </h4>
+            <input placeholder="Имя" type="text" class="contacts__form-input contacts__form-name">
+            <input placeholder="Телефон" type="text" class="contacts__form-input contacts__form-phone">
+            <button class="contacts__form-btn" type="submit">ОСТАВИТЬ ЗАЯВКУ</button>
+          </form>
+        </div>
+        <img src="images/contacts-img.jpg" alt="" class="contacts__images">
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__contacts">
+          <div id="down_contacts"></div>
+          <div class="footer__contacts-title">
+            Contacts
+          </div>
+          <a class="footer__phone" href="tel:+380665557776">
+            +38(066)555-777-6
+          </a>
+          <br>
+          <a class="footer__email" href="mailto:сappadocia.tours@gmail.com">
+            сappadocia.tours@gmail.com
+          </a>
+          <div class="footer__social">
+            <a class="footer__social-link" href="#">
+              <img src="images/youtube.svg" alt="">
+            </a>
+            <a class="footer__social-link" href="#">
+              <img src="images/facebook.svg" alt="">
+            </a>
+            <a class="footer__social-link" href="#">
+              <img src="images/instagram.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="footer__text">
+          Dreams come true
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

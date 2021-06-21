@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New_Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="slick-slider/slick-theme.css" />
+    <link rel="stylesheet" href="slick-slider/slick.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+
+  <!-- progress-bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+  <script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function () {
+      myFunction();
+    };
+
+    function myFunction() {
+      var winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      var height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+  </script>
+  <!-- /progress-bar -->
+
+  <!-- preloader -->
+  <body>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: #fff;
+        z-index: 1001;
+      }
+
+      .preloader__image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: url("img/Cube-1s-200px.svg") no-repeat 50% 50%;
+        /*расположение (url) изображения gif и др. параметры*/
+      }
+
+      .loaded_hiding .preloader {
+        transition: 10s opacity;
+        opacity: 0;
+      }
+
+      .loaded .preloader {
+        display: none;
+      }
+    </style>
+    <!-- /preloader -->
+
+    <!-- Прелоадер -->
+    <div class="preloader">
+      <div class="preloader__image"></div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        document.body.classList.add("loaded_hiding");
+        window.setTimeout(function () {
+          document.body.classList.add("loaded");
+          document.body.classList.remove("loaded_hiding");
+        }, 1000);
+      };
+    </script>
+
+      <!-- background-video -->
+      <div class="video-bg">
+        <video src="video-bg/keyboard_02.mp4" autoplay muted loop></video>
+      </div>
+      <div class="video-overlay"></div>
+
+      <!-- /background-video -->
+
+    <header class="header" id="home">
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li class="nav-menu-button"><a href="#home">Главная</a></li>
+          <li class="nav-menu-button"><a href="#proects">Наши проекты</a></li>
+          <li class="nav-menu-button"><a href="#services">Услуги</a></li>
+          <li class="nav-menu-button"><a href="#video">Видео</a></li>
+          <li class="nav-menu-button"><a href="#contacts">Контакты</a></li>
+        </ul>
+        <div
+          class="burger"
+          data-aos="fade-left"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="header-text">
+          <span>Передовая IT студия</span>
+          Мы создаем легкие решения сложных задач и проблем
+        </div>
+        <div class="header-button-block">
+          <a href="#" class="header-button">Наши проекты</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="create-app" id="services">
+      <div class="container">
+        <div
+          class="create-app-text"
+          data-aos="fade-bottom"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          Мы создаем мобильные приложения для крупных корпораций
+          <span
+            >Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на
+            латинице с начала XVI века.
+          </span>
+        </div>
+        <div class="create-app-block">
+          <div
+            class="create-app-block-inner"
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <img src="img/create-app.png" alt="" />
+            <div class="app-block-text">
+              <p>Создание сайтов</p>
+              <span
+                >Lorem Ipsum - это текст- "рыба", часто используе в печати и
+                вэб-дизайне.</span
+              >
+            </div>
+          </div>
+          <div
+            class="create-app-block-inner"
+            data-aos="fade-top"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <img src="img/create-app.png" alt="" />
+            <div class="app-block-text">
+              <p>Создание сайтов</p>
+              <span
+                >Lorem Ipsum - это текст- "рыба", часто используе в печати и
+                вэб-дизайне.</span
+              >
+            </div>
+          </div>
+          <div
+            class="create-app-block-inner"
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <img src="img/create-app.png" alt="" />
+            <div class="app-block-text">
+              <p>Создание сайтов</p>
+              <span
+                >Lorem Ipsum - это текст- "рыба", часто используе в печати и
+                вэб-дизайне.</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="services-button"
+          data-aos="flip-up"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <a href="#">Все услуги</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="standarts">
+      <div class="container">
+        <div class="standarts_inner">
+          <div
+            class="standarts_left"
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <div class="standarts_text">
+              <span>Высокие стандарты разработки</span>
+              <p>
+                Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+                вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                текстов на латинице с начала XVI века. стандартной "рыбой" для
+                текстов на латинице с начала XVI века.
+              </p>
+              <a href="#">Подробнее о компании</a>
+            </div>
+          </div>
+          <div class="standart-right" data-aos="zoom-in">
+            <img src="img/standart-img.png" alt="" />
+          </div>
+        </div>
+        <div
+          class="standarts-blocks"
+          data-aos="fade-top"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <div class="standart-block-inner">
+            <div class="standart-img-left">
+              <img src="img/web-programming.png" alt="" />
+            </div>
+            <div class="standart-text-right">125</div>
+            <div class="standart-text-center">Our projects</div>
+          </div>
+          <div class="standart-block-inner">
+            <div class="standart-img-left">
+              <img src="img/web-programming.png" alt="" />
+            </div>
+            <div class="standart-text-right">125</div>
+            <div class="standart-text-center">Our projects</div>
+          </div>
+          <div class="standart-block-inner">
+            <div class="standart-img-left">
+              <img src="img/web-programming.png" alt="" />
+            </div>
+            <div class="standart-text-right">125</div>
+            <div class="standart-text-center">Our projects</div>
+          </div>
+          <div class="standart-block-inner">
+            <div class="standart-img-left">
+              <img src="img/web-programming.png" alt="" />
+            </div>
+            <div class="standart-text-right">125</div>
+            <div class="standart-text-center">Our projects</div>
+          </div>
+          <div class="standart-block-inner">
+            <div class="standart-img-left">
+              <img src="img/web-programming.png" alt="" />
+            </div>
+            <div class="standart-text-right">125</div>
+            <div class="standart-text-center">Our projects</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jobs">
+      <div class="container">
+        <div class="jobs-top">
+          <div
+            class="jobs-top-text"
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            Наши работы, на которых мы специализируемся
+          </div>
+          <div
+            class="services-button jobs-button"
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <a href="#">Все услуги</a>
+          </div>
+        </div>
+        <div class="jobs-blocks">
+          <div
+            class="jobs-block-inner"
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <div class="img-jobs-top">
+              <img src="img/jobs-img1.png" alt="" />
+            </div>
+            <div class="jobs-block-title">
+              <span>01.</span> Исследование и упаковка
+            </div>
+            <div class="jobs-block-text">
+              Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+              вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+              на латинице с начала XVI века.
+            </div>
+            <div class="jobs-block-button">
+              <a href="#">Подробнее</a>
+            </div>
+          </div>
+          <div
+            class="jobs-block-inner"
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <div class="img-jobs-top">
+              <img src="img/jobs-img2.png" alt="" />
+            </div>
+            <div class="jobs-block-title">
+              <span>01.</span> Исследование и упаковка
+            </div>
+            <div class="jobs-block-text">
+              Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+              вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+              на латинице с начала XVI века.
+            </div>
+            <div class="jobs-block-button">
+              <a href="#">Подробнее</a>
+            </div>
+          </div>
+          <div
+            class="jobs-block-inner"
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <div class="img-jobs-top">
+              <img src="img/jobs-img3.png" alt="" />
+            </div>
+            <div class="jobs-block-title">
+              <span>01.</span> Исследование и упаковка
+            </div>
+            <div class="jobs-block-text">
+              Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+              вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+              на латинице с начала XVI века.
+            </div>
+            <div class="jobs-block-button">
+              <a href="#">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scrolltotop"></div>
+    <div class="slider">
+      <div
+        class="single-item"
+        data-aos="flip-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
+        <img src="slider-img/slider-img1.jpg" alt="" />
+        <img src="slider-img/slider-img2.jpg" alt="" />
+        <img src="slider-img/slider-img3.jpg" alt="" />
+        <img src="slider-img/slider-img4.jpg" alt="" />
+      </div>
+    </div>
+
+    <section class="projects" id="proects">
+      <div class="container">
+        <div
+          class="projects-tittle"
+          data-aos="fade-right"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          Наши проекты
+        </div>
+        <div
+          class="projects-text"
+          data-aos="fade-left"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+          вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на
+          латинице с начала XVI века.
+        </div>
+        <div
+          class="projects-images"
+          data-aos="zoom-out-up"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <img src="img/proects-img1.png" alt="" />
+          <img src="img/proects-img2.png" alt="" />
+          <img src="img/proects-img3.png" alt="" />
+          <img src="img/proects-img4.png" alt="" />
+        </div>
+        <div
+          class="projects-button"
+          data-aos="fade-top"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <a href="#">Все проекты</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="video" id="video">
+      <div
+        class="video-inner"
+        style="
+          background-image: url('img/video-bg.png');
+          height: 570px;
+          width: 100%;
+          background-repeat: no-repeat;
+          margin-bottom: 230px;
+        "
+      >
+        <div
+          class="container text-center"
+          data-aos="fade-left"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <div class="video-title">Видео о нашей работе</div>
+          <div class="video-text">Просто посмотрите, как мы работаем</div>
+        </div>
+        <div class="video-block-video">
+          <iframe
+          data-aos="flip-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          src="https://www.youtube.com/embed/uD27CZEiuGk"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        </div>
+       
+        
+      </div>
+      <div class="video-form-inner">
+        <div class="container">
+          <div
+            class="video-form-title"
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            Подпишитесь на нашу рассылку
+          </div>
+          <div
+            class="video-form-text"
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            Полезные статьи, акции, новости - получите все это сейчас!
+          </div>
+          <div
+            class="subscribe-form"
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            <div class="subscribe-form-inner">
+              <form action="#" method="POST">
+                <input type="text" placeholder="Ваш e-mail" />
+                <button>Подписаться</button>
+              </form>
+            </div>
+          </div>
+          <div
+            class="video-form-text-bottom"
+            data-aos="flip-right"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
+            Мы не шлем спам, и передаем никому ваши данные.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contacts">
+      <div class="container">
+        <div
+          class="footer-list"
+          data-aos="flip-up"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <ul class="before-item">
+            <span>Контактная информация</span>
+            <li><a href="#">test@test.ru</a></li>
+            <li><a href="#">+8 777 555 66 99</a></li>
+            <li><a href="#">Москва, Бульвар Ленина 33</a></li>
+          </ul>
+          <ul>
+            <span>Основные ссылки</span>
+            <li>
+              <a href="#home">Главная</a>
+            </li>
+            <li>
+              <a href="#proects">Наши проекты</a>
+            </li>
+            <li>
+              <a href="#services">Наши услуги</a>
+            </li>
+            <li>
+              <a href="#contacts">Контакты</a>
+            </li>
+          </ul>
+          <ul>
+            <span>Наши проекты</span>
+            <li>
+              <a href="#">РосНано</a>
+            </li>
+            <li>
+              <a href="#">Сколково</a>
+            </li>
+            <li>
+              <a href="#">Проект “Восток”</a>
+            </li>
+            <li>
+              <a href="#">ТЭЦ Калининграда</a>
+            </li>
+          </ul>
+          <ul>
+            <span>Социальные сети</span>
+            <li>
+              <a href="#">VK.com</a>
+            </li>
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+            <li>
+              <a href="#">Facebook</a>
+            </li>
+            <li>
+              <a href="#">Twitter</a>
+            </li>
+          </ul>
+        </div>
+        <div class="defend">(с) 2019. Все права защищены.</div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="slick-slider/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

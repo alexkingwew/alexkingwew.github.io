@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>It center</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     
+  </head>
+
+  <body>
+
+
+  <!-- preloader -->
+  <body>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: #fff;
+        z-index: 1001;
+      }
+
+      .preloader__image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: url("preloader/Vanilla-1s-280px.svg") no-repeat 50% 50%;
+        /*расположение (url) изображения gif и др. параметры*/
+      }
+
+      .loaded_hiding .preloader {
+        transition: 10s opacity;
+        opacity: 0;
+      }
+
+      .loaded .preloader {
+        display: none;
+      }
+    </style>
+    <!-- /preloader -->
+
+    <!-- Прелоадер -->
+    <div class="preloader">
+      <div class="preloader__image"></div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        document.body.classList.add("loaded_hiding");
+        window.setTimeout(function () {
+          document.body.classList.add("loaded");
+          document.body.classList.remove("loaded_hiding");
+        }, 1000);
+      };
+    </script>
+
+
+
+        <!-- background-video -->
+        <div class="video-bg">
+          <video autoplay muted loop>
+            <source src="video-bg//Typing_dark_05_Videvo.mp4"/>
+          </video>
+        </div>
+        <div class="video-overlay"></div>
+  
+        <!-- /background-video -->
+    <header id="home" class="header">
+
+      <div class="container">
+        <div class="top-menu">
+          <div class="logo">
+            <a href="#"><img src="images/logo.png" alt="" /></a>
+          </div>
+
+          <!-- nav -->
+          <nav class="nav">
+            <ul class="nav-menu">
+              <li class="nav-menu-button"><a href="#home">Գլխավոր</a></li>
+              <li class="nav-menu-button"><a href="#practice">Պրակտիկա</a></li>
+              <li class="nav-menu-button"><a href="#news">Նորություններ</a></li>
+              <li class="nav-menu-button"><a href="#jobs">Աշխատանքներ</a></li>
+              <li class="nav-menu-button"><a href="#contacts">Հետ կապ</a></li>
+            </ul>
+            <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+          </nav>
+          <!-- /nav -->
+        </div>
+      </div>
+      <div class="scroll-down-img">
+        <img src="images/scroll 1.png" alt="" />
+      </div>
+    </header>
+
+    <div id="practice" class="practice" data-aos="fade-up">
+      <div class="container">
+        <div class="practice-title">Պրակտիկա</div>
+        <div class="practice-text">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </div>
+      </div>
+      <div class="practice-images">
+        <div class="view view-first" data-aos="flip-up"
+        data-aos-duration="2000">
+          <img src="images/block 1.png" alt="" />
+          <div class="mask">
+            <a href="#" class="info">Կարդալ․․․</a>
+          </div>
+        </div>
+        <div class="view view-first" data-aos="flip-up"
+        data-aos-duration="2000">
+          <img src="images/block-2 1.png" alt="" />
+          <div class="mask">
+            <a href="#" class="info">Կարդալ․․․</a>
+          </div>
+        </div>
+        <div class="view view-first" data-aos="flip-up"
+        data-aos-duration="2000">
+          <img src="images/block-3 1.png" alt="" />
+          <div class="mask">
+            <a href="#" class="info">Կարդալ․․․</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scrolltotop"></div>
+
+
+    <div id="news" class="news" data-aos="fade-up">
+      <div class="news-title">Նորություններ</div>
+      <div class="news-image" data-aos="flip-down"
+      data-aos-duration="2000">
+        <img
+          src="images/news1 1.png"
+          style="
+            background-repeat: no-repeat;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          "
+          alt=""
+        />
+        <div class="mask-bg"></div>
+      </div>
+      <div class="news-text1" data-aos="fade-right"
+      data-aos-duration="2000">
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+        randomised words which don't look even slightly believable. If you are
+        going to use a passage of Lorem Ipsum, you need to be sure there isn't
+        anything embarrassing hidden in the middle of text.
+      </div>
+      <div class="news-image" data-aos="flip-down"
+      data-aos-duration="2000">
+        <img
+          src="images/news2 1.png"
+          style="
+            background-repeat: no-repeat;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          "
+          alt=""
+        />
+        <div class="mask-bg"></div>
+      </div>
+      <div class="news-text2" data-aos="fade-left"
+      data-aos-duration="2000">
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+        randomised words which don't look even slightly believable. If you are
+        going to use a passage of Lorem Ipsum, you need to be sure there isn't
+        anything embarrassing hidden in the middle of text.
+      </div>
+    </div>
+
+    <div id="jobs" class="jobs" data-aos="fade-up">
+      <div class="container">
+        <div class="jobs-title">Աշխատանքներ</div>
+        <div class="jobs-images" data-aos="flip-up"
+        data-aos-duration="2000">
+          <div class="img-block">
+            <img src="images/Rectangle 5.png" alt="" />
+          </div>
+          <div class="img-block">
+            <img src="images/Rectangle 6.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 7.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 8.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 9.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 10.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 11.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 12.png" alt="" />
+          </div><div class="img-block">
+            <img src="images/Rectangle 13.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="contacts" class="contacts" data-aos="fade-up">
+      <div class="contacts-title">
+        Հետ Կապ
+      </div>
+      <div class="contacts-us">
+        <div class="tel">
+          <i class="fa fa-phone fa-2x" aria-hidden="true"><a href="#">+999 999 999 999</a></i>
+        </div>
+        <div class="email">
+          <i class="fa fa-envelope fa-2x" aria-hidden="true"><a href="#">itcenter@mail.com</a></i>
+        </div>
+        <div class="instagram">
+          <i class="fa fa-instagram fa-2x" aria-hidden="true"><a href="#">itcenter/instagram.com</a></i>
+        </div>
+      </div>
+     
+    </div>
+   
+
+
+
+    <div class="footer" data-aos="fade-up">
+      <div class="footer-text">
+        <span>Copyright © 2021 All rights reserved</span>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://use.fontawesome.com/7a3c0cff95.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,651 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: Arial;
+
+}
+
+.header {
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
+.container {
+  max-width: 1230px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* полоса прокрутки (скроллбар) */
+
+::-webkit-scrollbar {
+  width: 10px;
+  /* ширина для вертикального скролла */
+  height: 10px;
+  /* высота для горизонтального скролла */
+  background-color: transparent;
+}
+
+/* ползунок скроллбара */
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000a8;
+  box-shadow: inset 1px 1px 10px #0f0f0f;
+}
+
+/* ::-webkit-scrollbar-thumb:hover {
+  background-color: #4985ff;
+} */
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  background: transparent;
+  background-color: transparent;
+  height: 0;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  background: transparent;
+  background-color: transparent;
+  height: 0;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  background: transparent;
+  background-color: transparent;
+  height: 0;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  background: transparent;
+  background-color: transparent;
+  height: 0;
+}
+
+/* /scroll-bar */
+
+/* video-bg */
+
+.video-overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000071;
+  z-index: -99;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* /video-bg */
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+/* nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  padding-top: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s;
+  padding: 19px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.nav-menu a:hover,
+.nav-menu a:active,
+.nav-menu a.active {
+  font-size: 20px;
+}
+
+.burger {
+  z-index: 10;
+  display: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+    right: 20px;
+}
+
+.burger div {
+  width: 53px;
+  height: 8px;
+  margin: 7px;
+  background: #fff;
+  transition: all 0.5s ease-in;
+}
+
+.burger.active .line1 {
+  transform: rotate(45deg) translate(14px, 16px);
+}
+
+.burger.active .line2 {
+  opacity: 0;
+}
+
+.burger.active .line3 {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-menu {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .burger {
+    display: block;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.897);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 70px);
+    transition: right 0.5s ease-in;
+    z-index: 10;
+  }
+  .nav-menu li {
+    opacity: 0;
+  }
+}
+
+.nav-menu.active {
+  right: 0;
+  width: 50%;
+  z-index: 10;
+}
+
+@keyframes navLinksFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* /nav */
+
+/* scroll-top-button */
+
+.scrolltotop {
+  z-index: 20;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.781);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  transition: all 0.5s;
+  display: none;
+  text-align: center;
+}
+
+.scrolltotop:after {
+  content: "⇧";
+  color: white;
+  line-height: 40px;
+}
+
+.scrolltotop:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.712);
+}
+
+/* /scroll-top-button */
+
+.top-menu {
+  justify-content: space-between;
+}
+
+@media (max-width: 1030px) {
+  .top-menu {
+    justify-content: space-around;
+  }
+  .logo {
+    padding: 20px;
+    margin: 0 auto;
+  }
+}
+
+.top-menu-buttons a:hover {
+  font-size: 20px;
+}
+
+.scroll-down-img{
+  text-align: center;
+  height: 200px;
+  margin-top: 300px;
+}
+@media(max-width:440px){
+  .scroll-down-img{
+    margin-top: 200px;
+  }
+}
+@media(max-width:340px){
+  .scroll-down-img{
+    margin-top: 150px;
+  }
+}
+.scroll-down-img img{
+  animation: mymove 3s infinite linear;
+  position: relative;
+  top: 50%;
+}
+
+@keyframes mymove {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 20px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.logo {
+  max-width: 300px;
+  animation: rotate 10s infinite linear;
+  position: relative;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+    transform: scaleX(0deg);
+  }
+  25% {
+    transform: rotateY(-20deg);
+  }
+  50% {
+    transform: rotateY(20deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+    transform: scaleX(0deg);
+  }
+}
+/* practice-block */
+.practice{
+  overflow: hidden;
+}
+.practice-title {
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 60px;
+  padding: 10px;
+}
+
+@media (max-width: 400px) {
+  .practice-title {
+    font-size: 35px;
+  }
+}
+
+.practice-text {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 10px;
+}
+
+.practice-images {
+  display: flex;
+  margin-bottom: 100px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* hover-effect */
+
+.view {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  margin: 20px;
+}
+
+.view .mask,
+.view .content {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.view img {
+  display: block;
+  position: relative;
+}
+.view a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: #000;
+  color: #fff;
+  font-family: Raleway, serif;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px #000;
+  top: 40%;
+  position: relative;
+}
+
+.view a.info:hover {
+  box-shadow: 0 0 5px #000;
+}
+
+.view-first img {
+  transition: all 0.2s linear;
+  width: 300px;
+  height: 200px;
+}
+
+.view-first .mask {
+  opacity: 0;
+  background-color: rgba(34, 33, 36, 0.44);
+  transition: all 0.4s ease-in-out;
+}
+
+.view-first a.info {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-first:hover img {
+  transform: scale(1.1);
+}
+
+.view-first:hover .mask {
+  opacity: 1;
+}
+
+.view-first:hover a.info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.view-first:hover p {
+  transition-delay: 0.1s;
+}
+
+.view-first:hover a.info {
+  transition-delay: 0.2s;
+}
+
+/* /hover-effect */
+
+/* news-bloock */
+.news {
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+}
+.news-title {
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 60px;
+  padding: 10px;
+}
+@media (max-width: 480px) {
+  .news-title {
+    font-size: 35px;
+  }
+}
+.mask-bg {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(39, 38, 41, 0.44);
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s linear;
+}
+.read {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
+.news-image {
+  width: 100%;
+  height: 500px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.news-image img {
+  transition: all 0.5s ease-in-out;
+}
+.news-image:hover img {
+  transform: scale(1.1);
+}
+.news-image:hover .mask-bg {
+  opacity: 1;
+}
+.news-image:hover {
+  z-index: 10;
+}
+.news-text1,
+.news-text2 {
+  max-width: 700px;
+  margin-bottom: 60px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.news-text1 {
+  text-align: center;
+  float: left;
+}
+.news-text2 {
+  text-align: center;
+  float: right;
+}
+/* /news-block */
+
+/* jobs-blog */
+.jobs {
+  padding-top: 270px;
+  overflow: hidden;
+}
+.jobs-title {
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 60px;
+  padding: 10px;
+}
+@media (max-width: 490px) {
+  .jobs-title {
+    font-size: 35px;
+  }
+}
+.jobs-images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 857px) {
+  .jobs-images {
+    justify-content: center;
+  }
+}
+.img-block {
+  overflow: hidden;
+  padding: 20px;
+  height: 300px;
+  max-width: 350px;
+}
+.jobs-images img {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 50px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  transition: all 0.5s linear;
+}
+.jobs-images img:hover {
+  transform: scale(1.2);
+}
+/* /jobs-blog */
+
+/* contacts-blog */
+.contacts {
+  overflow: hidden;
+  margin-top: 50px;
+  text-align: center;
+}
+.contacts-title {
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 60px;
+  padding: 10px;
+}
+.contacts-us {
+  margin-bottom: 50px;
+}
+.tel i {
+  margin-bottom: 20px;
+}
+.email i {
+  margin-bottom: 20px;
+}
+
+
+.tel a {
+  padding: 10px;
+  color: rgb(58, 55, 55);
+  font-size: 29px;
+  transition: all 0.2s linear;
+}
+.email a {
+  padding: 10px;
+  color: rgb(58, 55, 55);
+  font-size: 29px;
+  transition: all 0.2s linear;
+}
+.instagram a {
+  padding: 10px;
+  color: rgb(58, 55, 55);
+  font-size: 29px;
+  transition: all 0.2s linear;
+}
+
+.tel a:hover {
+  color: #000;
+  font-size: 28px;
+}
+.email a:hover {
+  color: #000;
+  font-size: 28px;
+}
+.instagram a:hover {
+  color: #000;
+  font-size: 28px;
+}
+/* /contacts-blog */
+
+/* footer */
+
+.footer {
+  overflow: hidden;
+  background-color: rgba(3, 3, 3, 0.959);
+  margin-top: 20px;
+  height: 300px;
+}
+.footer-text {
+  text-align: center;
+  font-size: 30px;
+  color: rgba(241, 228, 228, 0.753);
+  position: relative;
+  top: 50%;
+}
+@media (max-width: 490px) {
+  .footer-text {
+    font-size: 20px;
+  }
+}
+
+/* /footer */
